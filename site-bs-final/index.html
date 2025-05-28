@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acesse Nossas Redes Sociais</title>
+    <style>
+        /* ESTILOS GERAIS */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; 
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* CAMINHO CORRIGIDO PARA A IMAGEM .PNG */
+            background-image: url('sitetestebia.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* TELA DE BOTÕES */
+        #tela-botoes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            margin-top: 225px; 
+            padding-bottom: 50px;
+        }
+
+        .link-button, .action-button {
+            display: block;
+            width: 100%; 
+            padding: 15px 20px;
+            margin: 15px 0; 
+            text-decoration: none;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-sizing: border-box; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-button:hover, .action-button:hover {
+            transform: scale(1.03); 
+        }
+
+        .whatsapp-button { background-color: #25D366; }
+        .whatsapp-button:hover { background-color: #1DA851; }
+        .instagram-button { background-color: #E1306C; }
+        .instagram-button:hover { background-color: #c13584; }
+        .portfolio-button { background-color: #333; }
+        .portfolio-button:hover { background-color: #555; }
+
+        /* TELA DO PORTFÓLIO */
+        #tela-portfolio {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.5); 
+        }
+
+        #tela-portfolio iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .voltar-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tela-botoes">
+        <div class="container">
+            <a href="https://api.whatsapp.com/send/?phone=5573988669463&text=Ol%C3%A1%21+Vim+pelo+Instagram+e+gostaria+de+conhecer+seu+or%C3%A7amento.&type=phone_number&app_absent=0" target="_blank" class="link-button whatsapp-button">
+                Fale Conosco no WhatsApp
+            </a>
+            
+            <a href="https://www.instagram.com/bs_studio01/" target="_blank" class="link-button instagram-button">
+                Acessar Instagram
+            </a>
+            
+            <button onclick="mostrarPortfolio()" class="action-button portfolio-button">
+                Ver Portfólio
+            </button>
+        </div>
+    </div>
+
+    <div id="tela-portfolio">
+        <button onclick="mostrarBotoes()" class="voltar-button">Voltar</button>
+        <iframe src="portfolio.pdf"></iframe>
+    </div>
+
+    <script>
+        const telaBotoes = document.getElementById('tela-botoes');
+        const telaPortfolio = document.getElementById('tela-portfolio');
+
+        function mostrarPortfolio() {
+            telaBotoes.style.display = 'none';
+            telaPortfolio.style.display = 'block';
+        }
+
+        function mostrarBotoes() {
+            telaPortfolio.style.display = 'none';
+            telaBotoes.style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
